@@ -1,0 +1,29 @@
+PODS:
+  - JonContextMenu (1.0.0)
+  - TableViewReloadAnimation (0.0.5)
+
+DEPENDENCIES:
+  - JonContextMenu (from `https://github.com/jonSurrey/JonContextMenu.git`, branch `master`)
+  - TableViewReloadAnimation (~> 0.0.5)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - TableViewReloadAnimation
+
+EXTERNAL SOURCES:
+  JonContextMenu:
+    :branch: master
+    :git: https://github.com/jonSurrey/JonContextMenu.git
+
+CHECKOUT OPTIONS:
+  JonContextMenu:
+    :commit: b81f5647637a36246545cc8e57c5586827b09fab
+    :git: https://github.com/jonSurrey/JonContextMenu.git
+
+SPEC CHECKSUMS:
+  JonContextMenu: 21767ef04db36981fc802e7402781198b7741823
+  TableViewReloadAnimation: f3a4c4048efbc56331be98075f26a2e533a14c16
+
+PODFILE CHECKSUM: 41d888ef2910cef579befdc09f77dc78094972d4
+
+COCOAPODS: 1.11.2

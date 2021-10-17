@@ -1,0 +1,6 @@
+framework module Pods_PexelPhoto {
+  umbrella header "Pods-PexelPhoto-umbrella.h"
+
+  export *
+  module * { export * }
+}
