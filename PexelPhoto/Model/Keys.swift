@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+class keysForApi {
+    
+    static let apiKey = "563492ad6f917000010000013135d64409104bceae40aa375df80538"
+    
+}

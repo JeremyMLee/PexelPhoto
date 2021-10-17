@@ -39,6 +39,9 @@
                                     </attributedString>
                                     <color key="baseBackgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="startAction:" destination="gh8-SI-nZU" eventType="touchUpInside" id="kEP-Jc-ovh"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Happy Photo App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WhQ-he-co3">
                                 <rect key="frame" x="20" y="74" width="374" height="50"/>
@@ -77,6 +80,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="background" destination="ZJi-Ei-Ftq" id="SLS-dd-qy8"/>
+                        <outlet property="mainTitle" destination="WhQ-he-co3" id="SGl-bn-oAK"/>
+                        <outlet property="startButton" destination="dQq-PM-sN4" id="CqB-kM-R0b"/>
                         <segue destination="FPa-Z5-5qw" kind="presentation" identifier="startSegue" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="hOP-Rf-h9i"/>
                     </connections>
                 </viewController>
@@ -120,6 +126,9 @@
                                     <fontDescription key="titleFontDescription" name="Georgia" family="Georgia" pointSize="18"/>
                                     <color key="baseBackgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="searchOrLoad:" destination="FPa-Z5-5qw" eventType="touchUpInside" id="gCg-Kp-9kq"/>
+                                </connections>
                             </button>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="sgz-bm-Jtp">
                                 <rect key="frame" x="191" y="429" width="32" height="38"/>
@@ -159,6 +168,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="actionButton" destination="y6n-vt-FBh" id="MZI-20-r52"/>
+                        <outlet property="activity" destination="sgz-bm-Jtp" id="56R-uN-8aL"/>
+                        <outlet property="search" destination="5Qg-g4-xGh" id="J4S-ol-9Ip"/>
+                        <outlet property="tableView" destination="AN3-OD-K6X" id="YTv-Ex-apa"/>
+                        <outlet property="titleLabel" destination="9gd-fB-8Z9" id="edd-wt-MoU"/>
                         <segue destination="qPh-Uj-uMM" kind="presentation" identifier="viewImageSegue" id="12f-hU-WwM"/>
                     </connections>
                 </viewController>
@@ -314,6 +328,17 @@
                             <constraint firstItem="oaD-vo-edA" firstAttribute="leading" secondItem="bq9-2t-DqR" secondAttribute="leadingMargin" constant="74" id="zZv-Lo-JHd"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="artistLineSeparator" destination="nyA-DX-XS5" id="P5E-Al-aZR"/>
+                        <outlet property="artistTitle" destination="199-8W-d7O" id="sJX-FY-6IC"/>
+                        <outlet property="landscape" destination="QcP-bW-RFX" id="TkM-9B-pKq"/>
+                        <outlet property="orientation" destination="10O-Ao-TxC" id="cjz-Dp-xhk"/>
+                        <outlet property="orientationTitle" destination="v67-0d-H59" id="Gpm-R1-BhQ"/>
+                        <outlet property="photographerTitle" destination="qCj-TU-brT" id="fm8-bC-IGP"/>
+                        <outlet property="portrait" destination="FiH-j5-9kD" id="u76-uo-ped"/>
+                        <outlet property="shareBackground" destination="76d-hF-XcJ" id="fOX-Yy-pOx"/>
+                        <outlet property="square" destination="Fhh-N3-Dxg" id="b99-81-wWL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EkY-Xc-erj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
