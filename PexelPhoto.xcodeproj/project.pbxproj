@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9EDECDAC60643BA0E2AE37C1 /* Pods_PexelPhoto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB305F53214ACBED64A828FE /* Pods_PexelPhoto.framework */; };
 		D918F7FC271C3EA800B293C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D918F7FB271C3EA800B293C7 /* AppDelegate.swift */; };
 		D918F7FE271C3EA800B293C7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D918F7FD271C3EA800B293C7 /* SceneDelegate.swift */; };
 		D918F803271C3EA800B293C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D918F801271C3EA800B293C7 /* Main.storyboard */; };
@@ -25,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E129FCA98A63ED2C88F1815 /* Pods-PexelPhoto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PexelPhoto.debug.xcconfig"; path = "Target Support Files/Pods-PexelPhoto/Pods-PexelPhoto.debug.xcconfig"; sourceTree = "<group>"; };
+		D53D3C3A2BC041C67309877C /* Pods-PexelPhoto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PexelPhoto.release.xcconfig"; path = "Target Support Files/Pods-PexelPhoto/Pods-PexelPhoto.release.xcconfig"; sourceTree = "<group>"; };
 		D918F7F8271C3EA800B293C7 /* PexelPhoto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PexelPhoto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D918F7FB271C3EA800B293C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D918F7FD271C3EA800B293C7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -42,6 +45,7 @@
 		D918F820271C41FC00B293C7 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		D918F822271C421800B293C7 /* PexelNetworkCalls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexelNetworkCalls.swift; sourceTree = "<group>"; };
 		D918F826271C426C00B293C7 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		DB305F53214ACBED64A828FE /* Pods_PexelPhoto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PexelPhoto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,18 +53,39 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EDECDAC60643BA0E2AE37C1 /* Pods_PexelPhoto.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		398175B67FE4265CF2360058 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0E129FCA98A63ED2C88F1815 /* Pods-PexelPhoto.debug.xcconfig */,
+				D53D3C3A2BC041C67309877C /* Pods-PexelPhoto.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D725EDA264FFBBA70FF05820 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DB305F53214ACBED64A828FE /* Pods_PexelPhoto.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D918F7EF271C3EA800B293C7 = {
 			isa = PBXGroup;
 			children = (
 				D918F826271C426C00B293C7 /* Podfile */,
 				D918F7FA271C3EA800B293C7 /* PexelPhoto */,
 				D918F7F9271C3EA800B293C7 /* Products */,
+				398175B67FE4265CF2360058 /* Pods */,
+				D725EDA264FFBBA70FF05820 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -141,9 +166,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D918F80C271C3EA900B293C7 /* Build configuration list for PBXNativeTarget "PexelPhoto" */;
 			buildPhases = (
+				145F5C8E46FCFFC038C07C9F /* [CP] Check Pods Manifest.lock */,
 				D918F7F4271C3EA800B293C7 /* Sources */,
 				D918F7F5271C3EA800B293C7 /* Frameworks */,
 				D918F7F6271C3EA800B293C7 /* Resources */,
+				156ACAD51E32CBB522A6DB91 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -201,6 +228,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		145F5C8E46FCFFC038C07C9F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PexelPhoto-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		156ACAD51E32CBB522A6DB91 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PexelPhoto/Pods-PexelPhoto-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PexelPhoto/Pods-PexelPhoto-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PexelPhoto/Pods-PexelPhoto-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D918F7F4271C3EA800B293C7 /* Sources */ = {
@@ -360,6 +429,7 @@
 		};
 		D918F80D271C3EA900B293C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E129FCA98A63ED2C88F1815 /* Pods-PexelPhoto.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -388,6 +458,7 @@
 		};
 		D918F80E271C3EA900B293C7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D53D3C3A2BC041C67309877C /* Pods-PexelPhoto.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
