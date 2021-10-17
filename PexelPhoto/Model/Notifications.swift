@@ -9,4 +9,5 @@ import Foundation
 
 extension Notification.Name {
     static let picturesLoaded = Notification.Name("picturesLoaded")
+    static let loadingNumber = Notification.Name("loadingNumber")
 }

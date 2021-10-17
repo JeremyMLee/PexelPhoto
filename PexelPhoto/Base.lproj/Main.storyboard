@@ -122,7 +122,7 @@
                                     <constraint firstAttribute="height" constant="56" id="cT4-iu-sSE"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Search" cornerStyle="capsule" titleAlignment="center">
+                                <buttonConfiguration key="configuration" style="filled" title="Load More" cornerStyle="capsule" titleAlignment="center">
                                     <fontDescription key="titleFontDescription" name="Georgia" family="Georgia" pointSize="18"/>
                                     <color key="baseBackgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
@@ -147,6 +147,15 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="yes" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gwk-HS-HVU">
+                                <rect key="frame" x="20" y="475" width="374" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="DgX-pX-zGe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="14"/>
+                                <color key="textColor" red="0.19504043460000001" green="0.4511217475" blue="0.43530797960000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nTO-oq-6mx"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -154,6 +163,7 @@
                             <constraint firstItem="5Qg-g4-xGh" firstAttribute="leading" secondItem="nTO-oq-6mx" secondAttribute="leading" constant="12" id="0tf-35-6Fx"/>
                             <constraint firstItem="9gd-fB-8Z9" firstAttribute="leading" secondItem="nTO-oq-6mx" secondAttribute="leading" constant="20" id="2dv-tw-kF6"/>
                             <constraint firstAttribute="bottom" secondItem="AN3-OD-K6X" secondAttribute="bottom" id="5Cr-Oq-pAU"/>
+                            <constraint firstItem="Gwk-HS-HVU" firstAttribute="leading" secondItem="nTO-oq-6mx" secondAttribute="leading" constant="20" id="A77-h9-EYf"/>
                             <constraint firstItem="5Qg-g4-xGh" firstAttribute="top" secondItem="9gd-fB-8Z9" secondAttribute="bottom" constant="27" id="AjT-2r-6jZ"/>
                             <constraint firstItem="nTO-oq-6mx" firstAttribute="trailing" secondItem="9gd-fB-8Z9" secondAttribute="trailing" constant="20" id="BRP-8x-sHs"/>
                             <constraint firstItem="9gd-fB-8Z9" firstAttribute="top" secondItem="nTO-oq-6mx" secondAttribute="top" id="BtL-pn-SWl"/>
@@ -161,7 +171,9 @@
                             <constraint firstItem="nTO-oq-6mx" firstAttribute="trailing" secondItem="5Qg-g4-xGh" secondAttribute="trailing" constant="12" id="LeE-CU-CxZ"/>
                             <constraint firstItem="sgz-bm-Jtp" firstAttribute="centerX" secondItem="QD8-qV-pSX" secondAttribute="centerX" id="Oor-4c-QzN"/>
                             <constraint firstItem="AN3-OD-K6X" firstAttribute="top" secondItem="9gd-fB-8Z9" secondAttribute="bottom" constant="55" id="ThI-ce-id6"/>
+                            <constraint firstItem="Gwk-HS-HVU" firstAttribute="top" secondItem="sgz-bm-Jtp" secondAttribute="bottom" constant="8" symbolic="YES" id="YtT-5a-yyq"/>
                             <constraint firstItem="y6n-vt-FBh" firstAttribute="centerX" secondItem="QD8-qV-pSX" secondAttribute="centerX" id="bEp-7a-Gbt"/>
+                            <constraint firstItem="nTO-oq-6mx" firstAttribute="trailing" secondItem="Gwk-HS-HVU" secondAttribute="trailing" constant="20" id="mxr-lF-gWn"/>
                             <constraint firstItem="sgz-bm-Jtp" firstAttribute="centerY" secondItem="QD8-qV-pSX" secondAttribute="centerY" id="oe5-Cx-U10"/>
                             <constraint firstItem="AN3-OD-K6X" firstAttribute="leading" secondItem="nTO-oq-6mx" secondAttribute="leading" constant="20" id="pb7-oW-FFf"/>
                             <constraint firstItem="nTO-oq-6mx" firstAttribute="trailing" secondItem="AN3-OD-K6X" secondAttribute="trailing" constant="20" id="sJU-ov-G2W"/>
@@ -170,6 +182,7 @@
                     <connections>
                         <outlet property="actionButton" destination="y6n-vt-FBh" id="MZI-20-r52"/>
                         <outlet property="activity" destination="sgz-bm-Jtp" id="56R-uN-8aL"/>
+                        <outlet property="loadingStatus" destination="Gwk-HS-HVU" id="6NP-oi-Som"/>
                         <outlet property="search" destination="5Qg-g4-xGh" id="J4S-ol-9Ip"/>
                         <outlet property="tableView" destination="AN3-OD-K6X" id="YTv-Ex-apa"/>
                         <outlet property="titleLabel" destination="9gd-fB-8Z9" id="edd-wt-MoU"/>
@@ -178,7 +191,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5vc-O0-I4m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="887" y="136"/>
+            <point key="canvasLocation" x="886.95652173913049" y="135.9375"/>
         </scene>
         <!--Pexel Options View Controller-->
         <scene sceneID="W2e-h0-nlG">

@@ -12,10 +12,41 @@ class PexelNetworkCalls {
     
     func pexelSearch(title: String) {
         NSLog("Calling Pexels API...")
+        PexelSearchViewController.loadingNextPage = false
         PexelSearchViewController.pexelImages.removeAll()
         PexelSearchViewController.pexelList.removeAll()
         let search = "query=\(title)"
-        let urlItem = URL(string: "https://api.pexels.com/v1/search?per_page=30&\(search)")!
+        let urlItem = URL(string: "https://api.pexels.com/v1/search?per_page=20&\(search)")!
+        let semaphore = DispatchSemaphore (value: 0)
+        var request = URLRequest(url: urlItem, timeoutInterval: 30)
+        request.addValue("\(keysForApi.apiKey)", forHTTPHeaderField: "Authorization")
+        request.httpMethod = "GET"
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            NSLog("Pexels returned Values")
+            guard let data = data else {
+                print(String(describing: error))
+                semaphore.signal()
+                return
+            }
+            do {
+                let responseJSON = try JSONDecoder().decode(PexelPhotos.self, from: data)
+                self.decodePexelAPIValues(imageList: responseJSON)
+                semaphore.signal()
+            } catch let error as NSError {
+                NSLog("Error parsing JSON: \(error)")
+                semaphore.signal()
+            }
+            semaphore.signal()
+        }
+        task.resume()
+        semaphore.wait()
+    }
+    
+    func pexelNextPage(nextPageUrl: String) {
+        NSLog("Calling additional 20 images...")
+        PexelSearchViewController.loadingNextPage = true
+        let urlItem = URL(string: "\(nextPageUrl)")!
         let semaphore = DispatchSemaphore (value: 0)
         var request = URLRequest(url: urlItem, timeoutInterval: 30)
         request.addValue("\(keysForApi.apiKey)", forHTTPHeaderField: "Authorization")
@@ -44,6 +75,7 @@ class PexelNetworkCalls {
     
     private func decodePexelAPIValues(imageList: PexelPhotos) {
         NSLog("Sorting Pexel Images")
+        PexelSearchViewController.nextPage = imageList.nextPage ?? ""
         let photos = imageList.photos!
         for p in photos {
             PexelSearchViewController.pexelList.append(p)
@@ -53,7 +85,11 @@ class PexelNetworkCalls {
     
     private func createImageArray() {
         let imagesRetrieved = PexelSearchViewController.pexelList
+        let number = 0
         for i in imagesRetrieved {
+            let numberCurrent = number + 1
+            PexelSearchViewController.imageLoading = numberCurrent
+            NotificationCenter.default.post(name: .loadingNumber, object: self)
             let image = i.src?.medium
             let imagePortrait = i.src?.portrait
             let imageLandscape = i.src?.landscape

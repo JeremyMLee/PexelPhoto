@@ -14,6 +14,12 @@ class PexelSearchViewController: UIViewController, UITableViewDelegate, UITableV
     
     static var pexelImages:[PexelImages] = []
     
+    static var nextPage = ""
+    
+    static var imageLoading = 0
+    
+    static var loadingNextPage = false
+    
     var initialSearch = true
     
     var searching = false
@@ -23,6 +29,7 @@ class PexelSearchViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var search: UITextField!
     @IBOutlet weak var actionButton: UIButton!
     @IBOutlet weak var activity: UIActivityIndicatorView!
+    @IBOutlet weak var loadingStatus: UILabel!
     
     let cellReuseIdentifier = "pexel"
     
@@ -36,8 +43,10 @@ class PexelSearchViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     @objc func setUp() {
+        loadingStatus.text = ""
         actionButton.titleLabel?.text = "Search"
-        actionButton.isHidden = true
+        actionButton.alpha = 0.0
+        actionButton.isEnabled = false
         tableView.delegate = self
         tableView.dataSource = self
         search.delegate = self
@@ -62,6 +71,20 @@ class PexelSearchViewController: UIViewController, UITableViewDelegate, UITableV
     
     @objc func loadNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(imagesReload), name: .picturesLoaded, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(numberOfAmmount), name: .loadingNumber, object: nil)
+    }
+    
+    @objc func numberOfAmmount() {
+        DispatchQueue.main.async {
+            let number = PexelSearchViewController.imageLoading
+            if PexelSearchViewController.loadingNextPage {
+                let amount = PexelSearchViewController.pexelImages.count + 20
+                let amountPlus = number + 20
+                self.loadingStatus.text = "Loading \(amountPlus) of \(amount)"
+            } else {
+                self.loadingStatus.text = "Loading \(number) of 20"
+            }
+        }
     }
     
     @objc func imagesReload() {
@@ -70,6 +93,7 @@ class PexelSearchViewController: UIViewController, UITableViewDelegate, UITableV
                 let index = IndexPath(row: 0, section: 0)
                 self.tableView.scrollToRow(at: index, at: .top, animated: true)
             }
+            self.loadingStatus.text = ""
             self.initialSearch = false
             self.searching = false
             self.tableView.isUserInteractionEnabled = true
@@ -110,6 +134,20 @@ class PexelSearchViewController: UIViewController, UITableViewDelegate, UITableV
         performSegue(withIdentifier: "viewImageSegue", sender: nil)
     }
     
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row + 2 == PexelSearchViewController.pexelImages.count {
+            UIView.animate(withDuration: 1.0, delay: 0.0, options: [], animations: {
+                self.actionButton.alpha = 1.0
+                self.actionButton.isEnabled = true
+            }, completion: nil)
+        } else {
+            UIView.animate(withDuration: 1.0, delay: 0.0, options: [], animations: {
+                self.actionButton.alpha = 0.0
+                self.actionButton.isEnabled = false
+            }, completion: nil)
+        }
+    }
+    
     func textFieldDidBeginEditing(_ textField: UITextField) {
         tableView.isUserInteractionEnabled = false
         UIView.animate(withDuration: 1.0, delay: 0.0, options: [], animations: {
@@ -140,7 +178,15 @@ class PexelSearchViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     @IBAction func searchOrLoad(_ sender: UIButton) {
-        searchItem()
+        if PexelSearchViewController.nextPage == "" {
+            print("No more photos to load.")
+        } else {
+            tableView.isUserInteractionEnabled = false
+            activity.startAnimating()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                PexelNetworkCalls().pexelNextPage(nextPageUrl: PexelSearchViewController.nextPage)
+            }
+        }
     }
     
     @objc func searchItem() {
