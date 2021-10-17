@@ -9,21 +9,39 @@
 /* Begin PBXBuildFile section */
 		D918F7FC271C3EA800B293C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D918F7FB271C3EA800B293C7 /* AppDelegate.swift */; };
 		D918F7FE271C3EA800B293C7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D918F7FD271C3EA800B293C7 /* SceneDelegate.swift */; };
-		D918F800271C3EA800B293C7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D918F7FF271C3EA800B293C7 /* ViewController.swift */; };
 		D918F803271C3EA800B293C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D918F801271C3EA800B293C7 /* Main.storyboard */; };
 		D918F805271C3EA900B293C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D918F804271C3EA900B293C7 /* Assets.xcassets */; };
 		D918F808271C3EA900B293C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D918F806271C3EA900B293C7 /* LaunchScreen.storyboard */; };
+		D918F813271C40EC00B293C7 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D918F812271C40EC00B293C7 /* StartViewController.swift */; };
+		D918F815271C411C00B293C7 /* PexelSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D918F814271C411C00B293C7 /* PexelSearchViewController.swift */; };
+		D918F817271C413400B293C7 /* PexelOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D918F816271C413400B293C7 /* PexelOptionsViewController.swift */; };
+		D918F81A271C418800B293C7 /* PexelsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D918F818271C418800B293C7 /* PexelsTableViewCell.swift */; };
+		D918F81B271C418800B293C7 /* PexelsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D918F819271C418800B293C7 /* PexelsTableViewCell.xib */; };
+		D918F81D271C41D800B293C7 /* PexelPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = D918F81C271C41D800B293C7 /* PexelPhotos.swift */; };
+		D918F81F271C41E800B293C7 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = D918F81E271C41E800B293C7 /* Keys.swift */; };
+		D918F821271C41FC00B293C7 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = D918F820271C41FC00B293C7 /* Notifications.swift */; };
+		D918F823271C421800B293C7 /* PexelNetworkCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = D918F822271C421800B293C7 /* PexelNetworkCalls.swift */; };
+		D918F827271C426C00B293C7 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = D918F826271C426C00B293C7 /* Podfile */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D918F7F8271C3EA800B293C7 /* PexelPhoto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PexelPhoto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D918F7FB271C3EA800B293C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D918F7FD271C3EA800B293C7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D918F7FF271C3EA800B293C7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D918F802271C3EA800B293C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D918F804271C3EA900B293C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D918F807271C3EA900B293C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D918F809271C3EA900B293C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D918F812271C40EC00B293C7 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		D918F814271C411C00B293C7 /* PexelSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexelSearchViewController.swift; sourceTree = "<group>"; };
+		D918F816271C413400B293C7 /* PexelOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexelOptionsViewController.swift; sourceTree = "<group>"; };
+		D918F818271C418800B293C7 /* PexelsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexelsTableViewCell.swift; sourceTree = "<group>"; };
+		D918F819271C418800B293C7 /* PexelsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PexelsTableViewCell.xib; sourceTree = "<group>"; };
+		D918F81C271C41D800B293C7 /* PexelPhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexelPhotos.swift; sourceTree = "<group>"; };
+		D918F81E271C41E800B293C7 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
+		D918F820271C41FC00B293C7 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		D918F822271C421800B293C7 /* PexelNetworkCalls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexelNetworkCalls.swift; sourceTree = "<group>"; };
+		D918F826271C426C00B293C7 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +58,7 @@
 		D918F7EF271C3EA800B293C7 = {
 			isa = PBXGroup;
 			children = (
+				D918F826271C426C00B293C7 /* Podfile */,
 				D918F7FA271C3EA800B293C7 /* PexelPhoto */,
 				D918F7F9271C3EA800B293C7 /* Products */,
 			);
@@ -56,15 +75,63 @@
 		D918F7FA271C3EA800B293C7 /* PexelPhoto */ = {
 			isa = PBXGroup;
 			children = (
+				D918F824271C423400B293C7 /* Resources */,
+				D918F80F271C407F00B293C7 /* Model */,
+				D918F811271C40A100B293C7 /* View */,
+				D918F810271C408C00B293C7 /* Controller */,
 				D918F7FB271C3EA800B293C7 /* AppDelegate.swift */,
 				D918F7FD271C3EA800B293C7 /* SceneDelegate.swift */,
-				D918F7FF271C3EA800B293C7 /* ViewController.swift */,
 				D918F801271C3EA800B293C7 /* Main.storyboard */,
 				D918F804271C3EA900B293C7 /* Assets.xcassets */,
 				D918F806271C3EA900B293C7 /* LaunchScreen.storyboard */,
 				D918F809271C3EA900B293C7 /* Info.plist */,
 			);
 			path = PexelPhoto;
+			sourceTree = "<group>";
+		};
+		D918F80F271C407F00B293C7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D918F81C271C41D800B293C7 /* PexelPhotos.swift */,
+				D918F81E271C41E800B293C7 /* Keys.swift */,
+				D918F820271C41FC00B293C7 /* Notifications.swift */,
+				D918F822271C421800B293C7 /* PexelNetworkCalls.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D918F810271C408C00B293C7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D918F812271C40EC00B293C7 /* StartViewController.swift */,
+				D918F814271C411C00B293C7 /* PexelSearchViewController.swift */,
+				D918F816271C413400B293C7 /* PexelOptionsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D918F811271C40A100B293C7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D918F818271C418800B293C7 /* PexelsTableViewCell.swift */,
+				D918F819271C418800B293C7 /* PexelsTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D918F824271C423400B293C7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D918F825271C424200B293C7 /* Icons */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D918F825271C424200B293C7 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Icons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +192,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D918F827271C426C00B293C7 /* Podfile in Resources */,
+				D918F81B271C418800B293C7 /* PexelsTableViewCell.xib in Resources */,
 				D918F808271C3EA900B293C7 /* LaunchScreen.storyboard in Resources */,
 				D918F805271C3EA900B293C7 /* Assets.xcassets in Resources */,
 				D918F803271C3EA800B293C7 /* Main.storyboard in Resources */,
@@ -138,9 +207,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D918F800271C3EA800B293C7 /* ViewController.swift in Sources */,
+				D918F81A271C418800B293C7 /* PexelsTableViewCell.swift in Sources */,
+				D918F81F271C41E800B293C7 /* Keys.swift in Sources */,
 				D918F7FC271C3EA800B293C7 /* AppDelegate.swift in Sources */,
+				D918F821271C41FC00B293C7 /* Notifications.swift in Sources */,
+				D918F815271C411C00B293C7 /* PexelSearchViewController.swift in Sources */,
+				D918F81D271C41D800B293C7 /* PexelPhotos.swift in Sources */,
 				D918F7FE271C3EA800B293C7 /* SceneDelegate.swift in Sources */,
+				D918F813271C40EC00B293C7 /* StartViewController.swift in Sources */,
+				D918F817271C413400B293C7 /* PexelOptionsViewController.swift in Sources */,
+				D918F823271C421800B293C7 /* PexelNetworkCalls.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
