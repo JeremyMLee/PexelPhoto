@@ -10,48 +10,19 @@ import UIKit
 
 class PexelNetworkCalls {
     
-    func pexelSearch(title: String) {
+    func pexelSearch(title: String, page: Int) {
         NSLog("Calling Pexels API...")
-        PexelSearchViewController.loadingNextPage = false
-        PexelSearchViewController.pexelImages.removeAll()
-        PexelSearchViewController.pexelList.removeAll()
         let search = "query=\(title)"
-        let urlItem = URL(string: "https://api.pexels.com/v1/search?per_page=20&\(search)")!
+        let pageSearch = "\(page)"
+        let urlItem = URL(string: "https://api.pexels.com/v1/search?\(search)&per_page=20&page=\(pageSearch)")!
         let semaphore = DispatchSemaphore (value: 0)
         var request = URLRequest(url: urlItem, timeoutInterval: 30)
         request.addValue("\(keysForApi.apiKey)", forHTTPHeaderField: "Authorization")
+        request.addValue("no-cache", forHTTPHeaderField: "Cache-Control")
+        request.addValue("*/*", forHTTPHeaderField: "Accept")
+        request.addValue("application/json", forHTTPHeaderField: "Accept-Encoding")
         request.httpMethod = "GET"
-        
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            NSLog("Pexels returned Values")
-            guard let data = data else {
-                print(String(describing: error))
-                semaphore.signal()
-                return
-            }
-            do {
-                let responseJSON = try JSONDecoder().decode(PexelPhotos.self, from: data)
-                self.decodePexelAPIValues(imageList: responseJSON)
-                semaphore.signal()
-            } catch let error as NSError {
-                NSLog("Error parsing JSON: \(error)")
-                semaphore.signal()
-            }
-            semaphore.signal()
-        }
-        task.resume()
-        semaphore.wait()
-    }
-    
-    func pexelNextPage(nextPageUrl: String) {
-        NSLog("Calling additional 20 images...")
-        PexelSearchViewController.loadingNextPage = true
-        let urlItem = URL(string: "\(nextPageUrl)")!
-        let semaphore = DispatchSemaphore (value: 0)
-        var request = URLRequest(url: urlItem, timeoutInterval: 30)
-        request.addValue("\(keysForApi.apiKey)", forHTTPHeaderField: "Authorization")
-        request.httpMethod = "GET"
-        
+        print("URL Search: \(urlItem)")
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             NSLog("Pexels returned Values")
             guard let data = data else {
@@ -75,7 +46,6 @@ class PexelNetworkCalls {
     
     private func decodePexelAPIValues(imageList: PexelPhotos) {
         NSLog("Sorting Pexel Images")
-        PexelSearchViewController.nextPage = imageList.nextPage ?? ""
         let photos = imageList.photos!
         for p in photos {
             PexelSearchViewController.pexelList.append(p)

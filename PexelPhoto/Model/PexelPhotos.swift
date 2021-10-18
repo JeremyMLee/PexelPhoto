@@ -10,10 +10,10 @@ import UIKit
 
 // MARK: - PexelPhotos
 struct PexelPhotos: Codable {
-    var page, perPage: Int?
-    var photos: [Photo]?
-    var totalResults: Int?
-    var nextPage: String?
+    var page, perPage: Int!
+    var photos: [Photo]!
+    var totalResults: Int!
+    var nextPage: String!
 }
 
 // MARK: - Photo

@@ -19,7 +19,7 @@ class StartViewController: UIViewController {
         background.alpha = 0.0
         startButton.alpha = 0.0
         mainTitle.layer.masksToBounds = true
-        mainTitle.layer.cornerRadius = 30.0
+        mainTitle.layer.cornerRadius = 25.0
         setUp()
     }
     

@@ -16,32 +16,36 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photographer Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sov-GA-f1A">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ozm-DM-HKU">
+                        <rect key="frame" x="23" y="23" width="274" height="274"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d3O-Uy-boF">
                         <rect key="frame" x="92" y="279" width="220" height="30"/>
                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="30" id="8JP-ne-twm"/>
-                            <constraint firstAttribute="width" constant="220" id="Qsu-AA-A55"/>
+                            <constraint firstAttribute="height" constant="30" id="Gvw-dT-UBx"/>
+                            <constraint firstAttribute="width" constant="220" id="Po2-nd-uwS"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="13"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ozm-DM-HKU">
-                        <rect key="frame" x="23" y="23" width="274" height="274"/>
-                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="ozm-DM-HKU" secondAttribute="bottom" constant="23" id="Jdv-me-fAk"/>
                     <constraint firstItem="ozm-DM-HKU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="23" id="Mca-Og-hF9"/>
+                    <constraint firstAttribute="trailing" secondItem="d3O-Uy-boF" secondAttribute="trailing" constant="8" id="TIS-tK-7Fm"/>
                     <constraint firstAttribute="trailing" secondItem="ozm-DM-HKU" secondAttribute="trailing" constant="23" id="Vu0-XP-fdH"/>
-                    <constraint firstAttribute="bottom" secondItem="Sov-GA-f1A" secondAttribute="bottom" constant="11" id="dBr-PP-vV6"/>
                     <constraint firstItem="ozm-DM-HKU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="23" id="nY7-NL-Njg"/>
-                    <constraint firstAttribute="trailing" secondItem="Sov-GA-f1A" secondAttribute="trailing" constant="8" id="tNQ-xV-1Q6"/>
+                    <constraint firstAttribute="bottom" secondItem="d3O-Uy-boF" secondAttribute="bottom" constant="11" id="ux6-ku-5cI"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <point key="canvasLocation" x="139" y="153"/>
+            <connections>
+                <outlet property="pexelArtist" destination="d3O-Uy-boF" id="ldO-jL-e2r"/>
+                <outlet property="pexelImage" destination="ozm-DM-HKU" id="fUR-C0-iRf"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="152.67857142857142"/>
         </tableViewCell>
     </objects>
 </document>
