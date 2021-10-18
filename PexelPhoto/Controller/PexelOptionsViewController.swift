@@ -10,7 +10,13 @@ import JonContextMenu
 
 class PexelOptionsViewController: UIViewController, JonContextMenuDelegate {
     
+    //MARK: - Variables
+    
     static var select = 0
+    
+    var imageSelect:SelectedImage = .square
+    
+    //MARK: - Enums
     
     enum SelectedImage: Int {
         case square = 0
@@ -18,7 +24,7 @@ class PexelOptionsViewController: UIViewController, JonContextMenuDelegate {
         case landscape = 2
     }
     
-    var imageSelect:SelectedImage = .square
+    //MARK: - IBOutlets
     
     @IBOutlet weak var square: UIImageView!
     @IBOutlet weak var portrait: UIImageView!
@@ -29,6 +35,8 @@ class PexelOptionsViewController: UIViewController, JonContextMenuDelegate {
     @IBOutlet weak var artistLineSeparator: UILabel!
     @IBOutlet weak var shareBackground: UIView!
     @IBOutlet weak var orientation: UIButton!
+    
+    //MARK: - Items & Menu Items
     
     let items = [JonItem(id: 1, title: "Save"   , icon: UIImage(systemName: "photo.fill")),
                  JonItem(id: 2, title: "Save All"  , icon: UIImage(systemName: "photo.on.rectangle.fill")),
@@ -71,6 +79,8 @@ class PexelOptionsViewController: UIViewController, JonContextMenuDelegate {
         return UIMenu(title: "Select", image: nil, identifier: nil, options: [], children: menuItems)
     }
     
+    //MARK: - ViewDidLoad
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUp()
@@ -79,6 +89,8 @@ class PexelOptionsViewController: UIViewController, JonContextMenuDelegate {
     override func viewWillAppear(_ animated: Bool) {
         AppDelegate.AppUtility.lockOrientation(UIInterfaceOrientationMask.portrait, andRotateTo: UIInterfaceOrientation.portrait)
     }
+    
+    //MARK: - Setup
     
     @objc func setUp() {
         let contextMenu = JonContextMenu().setDelegate(self).setItems(items).setItemsDefaultColorTo(.white).setItemsTitleColorTo(.white).setItemsActiveColorTo(.darkGray).setItemsTitleSizeTo(20.0).setBackgroundColorTo(.white, withAlpha: 0.2).build()
@@ -108,6 +120,8 @@ class PexelOptionsViewController: UIViewController, JonContextMenuDelegate {
         artistTitle.text = photo.owner
         retrievePortraitAndLandscape(portraitID: photo.portrait, landscapeID: photo.landscape)
     }
+    
+    //MARK: - Menu Functions
     
     @objc func retrievePortraitAndLandscape(portraitID: String, landscapeID: String) {
         let portraitUrl = URL(string: portraitID)
@@ -193,14 +207,8 @@ class PexelOptionsViewController: UIViewController, JonContextMenuDelegate {
     func menuItemWasDeactivated(item: JonItem) {
     }
     
-    @objc func successAlert() {
-        let alert = UIAlertController(title: "Image Saved", message: "Your image has been saved to your photos.", preferredStyle: UIAlertController.Style.alert)
-        self.present(alert, animated: true, completion: nil)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-            alert.dismiss(animated: true, completion: nil)
-        }
-    }
-    
+    //MARK: - Share Function
+
     @objc func sharePhoto(item: UIImage) {
         let image : UIImage = item
         let activityViewController : UIActivityViewController = UIActivityViewController(
@@ -217,4 +225,14 @@ class PexelOptionsViewController: UIViewController, JonContextMenuDelegate {
         self.present(activityViewController, animated: true, completion: nil)
     }
     
+    //MARK: - Alert Function
+    
+    @objc func successAlert() {
+        let alert = UIAlertController(title: "Image Saved", message: "Your image has been saved to your photos.", preferredStyle: UIAlertController.Style.alert)
+        self.present(alert, animated: true, completion: nil)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+            alert.dismiss(animated: true, completion: nil)
+        }
+    }
+
 }

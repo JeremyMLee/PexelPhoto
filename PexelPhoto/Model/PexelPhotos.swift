@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 // MARK: - PexelPhotos
+
 struct PexelPhotos: Codable {
     var page, perPage: Int!
     var photos: [Photo]!
@@ -17,6 +18,7 @@ struct PexelPhotos: Codable {
 }
 
 // MARK: - Photo
+
 struct Photo: Codable {
     var id, width, height: Int?
     var url: String?
@@ -29,6 +31,7 @@ struct Photo: Codable {
 }
 
 // MARK: - Src
+
 struct Src: Codable {
     var original, large2X, large, medium: String?
     var small, portrait, landscape, tiny: String?

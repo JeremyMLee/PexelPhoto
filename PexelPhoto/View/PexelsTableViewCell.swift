@@ -8,9 +8,13 @@
 import UIKit
 
 class PexelsTableViewCell: UITableViewCell {
+    
+    //MARK: - IBOutlets
 
     @IBOutlet weak var pexelImage: UIImageView!
     @IBOutlet weak var pexelArtist: UILabel!
+    
+    //MARK: - Nib Loading
     
     override func awakeFromNib() {
         super.awakeFromNib()

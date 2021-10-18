@@ -10,6 +10,8 @@ import UIKit
 
 class PexelNetworkCalls {
     
+    //MARK: - API Call
+    
     func pexelSearch(title: String, page: Int) {
         NSLog("Calling Pexels API...")
         let search = "query=\(title)"
@@ -44,6 +46,8 @@ class PexelNetworkCalls {
         semaphore.wait()
     }
     
+    //MARK: - API JSON Decode
+    
     private func decodePexelAPIValues(imageList: PexelPhotos) {
         NSLog("Sorting Pexel Images")
         let photos = imageList.photos!
@@ -52,6 +56,8 @@ class PexelNetworkCalls {
         }
         createImageArray()
     }
+    
+    //MARK: - Image Creation
     
     private func createImageArray() {
         let imagesRetrieved = PexelSearchViewController.pexelList

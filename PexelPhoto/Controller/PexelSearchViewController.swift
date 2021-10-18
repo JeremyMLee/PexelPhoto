@@ -10,19 +10,20 @@ import TableViewReloadAnimation
 
 class PexelSearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     
+    //MARK: - Variables
+    
     static var pexelList:[Photo] = []
-    
     static var pexelImages:[PexelImages] = []
-    
     static var imageLoading = 0
-    
     static var currentPage = 0
-    
     static var searchText = ""
     
     var initialSearch = false
-    
     var searching = false
+    
+    let cellReuseIdentifier = "pexel"
+    
+    //MARK: - IBOutlets
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
@@ -32,7 +33,7 @@ class PexelSearchViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var activity: UIActivityIndicatorView!
     @IBOutlet weak var loadingStatus: UILabel!
     
-    let cellReuseIdentifier = "pexel"
+    //MARK: - ViewDidLoad
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +43,8 @@ class PexelSearchViewController: UIViewController, UITableViewDelegate, UITableV
     override func viewWillAppear(_ animated: Bool) {
         AppDelegate.AppUtility.lockOrientation(UIInterfaceOrientationMask.portrait, andRotateTo: UIInterfaceOrientation.portrait)
     }
+    
+    //MARK: - Setup
     
     @objc func setUp() {
         activity.layer.masksToBounds = true
@@ -73,6 +76,8 @@ class PexelSearchViewController: UIViewController, UITableViewDelegate, UITableV
         loadNotifications()
     }
     
+    //MARK: - Notification Functions
+    
     @objc func loadNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(imagesReload), name: .picturesLoaded, object: nil)
     }
@@ -95,6 +100,8 @@ class PexelSearchViewController: UIViewController, UITableViewDelegate, UITableV
                               constantDelay: 0))
         }
     }
+    
+    //MARK: - Tableview
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -139,6 +146,8 @@ class PexelSearchViewController: UIViewController, UITableViewDelegate, UITableV
         }
     }
     
+    //MARK: - Textfield Delegates
+    
     func textFieldDidBeginEditing(_ textField: UITextField) {
         tableView.isUserInteractionEnabled = false
         UIView.animate(withDuration: 1.0, delay: 0.0, options: [], animations: {
@@ -168,6 +177,8 @@ class PexelSearchViewController: UIViewController, UITableViewDelegate, UITableV
         view.endEditing(true)
     }
     
+    //MARK: - IBActions
+    
     @IBAction func searchOrLoad(_ sender: UIButton) {
         initialSearch = false
         let nextPage = PexelSearchViewController.currentPage + 1
@@ -179,6 +190,8 @@ class PexelSearchViewController: UIViewController, UITableViewDelegate, UITableV
             PexelNetworkCalls().pexelSearch(title: searchItem, page: nextPage)
         }
     }
+    
+    //MARK: - Functions
     
     @objc func searchItem() {
         if search.text == "" {

@@ -8,10 +8,14 @@
 import UIKit
 
 class StartViewController: UIViewController {
+    
+    //MARK: - IBOutlets
 
     @IBOutlet weak var mainTitle: UILabel!
     @IBOutlet weak var background: UIImageView!
     @IBOutlet weak var startButton: UIButton!
+    
+    //MARK: - ViewDidLoad
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +26,8 @@ class StartViewController: UIViewController {
         mainTitle.layer.cornerRadius = 25.0
         setUp()
     }
+    
+    //MARK: - Setup
     
     @objc func setUp() {
         print("Setting up app")
@@ -39,6 +45,8 @@ class StartViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         AppDelegate.AppUtility.lockOrientation(UIInterfaceOrientationMask.portrait, andRotateTo: UIInterfaceOrientation.portrait)
     }
+    
+    //MARK: - IBActions
     
     @IBAction func startAction(_ sender: UIButton) {
         UIView.animate(withDuration: 1.0, delay: 0.0, options: UIView.AnimationOptions(), animations: {
