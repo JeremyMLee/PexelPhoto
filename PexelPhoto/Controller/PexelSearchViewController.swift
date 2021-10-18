@@ -45,7 +45,7 @@ class PexelSearchViewController: UIViewController, UITableViewDelegate, UITableV
     
     @objc func setUp() {
         activity.layer.masksToBounds = true
-        activity.layer.cornerRadius = 20.0
+        activity.layer.cornerRadius = 25.0
         loadingStatus.text = ""
         actionButton.titleLabel?.text = "Search"
         actionButton.alpha = 0.0
@@ -91,7 +91,7 @@ class PexelSearchViewController: UIViewController, UITableViewDelegate, UITableV
             }, completion: nil)
             self.activity.stopAnimating()
             self.tableView.reloadData(
-                with: .simple(duration: 0.75, direction: .rotation3D(type: .doctorStrange),
+                with: .simple(duration: 0.75, direction: .rotation3D(type: .hulk),
                               constantDelay: 0))
         }
     }
