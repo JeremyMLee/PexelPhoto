@@ -40,7 +40,7 @@ class PexelNetworkCalls {
                 NSLog("Error parsing JSON: \(error)")
                 semaphore.signal()
             }
-            semaphore.signal()
+//            semaphore.signal()
         }
         task.resume()
         semaphore.wait()
@@ -78,5 +78,4 @@ class PexelNetworkCalls {
         }
         NotificationCenter.default.post(name: .picturesLoaded, object: self)
     }
-    
 }

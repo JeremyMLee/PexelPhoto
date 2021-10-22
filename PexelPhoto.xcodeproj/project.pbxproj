@@ -57,7 +57,7 @@
 		D918F81E271C41E800B293C7 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		D918F820271C41FC00B293C7 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		D918F822271C421800B293C7 /* PexelNetworkCalls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexelNetworkCalls.swift; sourceTree = "<group>"; };
-		D918F826271C426C00B293C7 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		D918F826271C426C00B293C7 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		D918F828271C484200B293C7 /* PhotoApp_58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PhotoApp_58.png; sourceTree = "<group>"; };
 		D918F829271C484200B293C7 /* PhotoApp_1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PhotoApp_1024.png; sourceTree = "<group>"; };
 		D918F82A271C484200B293C7 /* PhotoApp_120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PhotoApp_120.png; sourceTree = "<group>"; };
